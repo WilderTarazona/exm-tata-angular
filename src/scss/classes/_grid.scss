@@ -1,0 +1,80 @@
+// @use '../variables/breakpoints.var' as otp-breakpoints;
+@use '../mixins/breakpoints.mixin' as otp-breakpoints-mixin;
+
+// @each $key, $value in otp-breakpoints.$breakpoints {
+//   @include otp-breakpoints-mixin.media-breakpoint(#{$key}) {
+//     @for $numerador from 1 through 12 {
+//       @for $denominador from 1 through 12 {
+//         @if ($numerador < $denominador) {
+//           // $percent: calc(($numerador / $denominador) * 100);
+//           .otp-w-#{$key}-#{$numerador}-#{$denominador} {
+//             flex-basis: calc((100 / ($denominador / $numerador)) * 1%);
+//             // width: #{$percent + "%"};
+//             // padding: 10px -10px;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+@for $n from 1 through 12 {
+  @for $d from 1 through 12 {
+    @if ($n < $d) {
+      // $p: calc(($n / $d) * 100);
+      .plus-w-#{$n}\/#{$d} {
+        flex-basis: calc((100 / ($d / $n)) * 1%);
+        // width: #{$p + "%"};
+        // padding: 10px -10px;
+      }
+    }
+  }
+}
+
+// .otp-w-1\/2 { flex-basis: 50%; }
+// .otp-w-1\/5 { flex-basis: 20%; }
+// .otp-w-2\/5 { flex-basis: 40%; }
+// .otp-w-3\/5 { flex-basis: 60%;}
+// .otp-w-4\/5 { flex-basis: 80%;}
+// .otp-w-1\/12	{ flex-basis: 8.333333%; }
+// .otp-w-2\/12	{ flex-basis: 16.666667%; }
+// .otp-w-3\/12	{ flex-basis: 25%; }
+// .otp-w-4\/12	{ flex-basis: 33.333333%; }
+// .otp-w-5\/12	{ flex-basis: 41.666667%; }
+// .otp-w-6\/12	{ flex-basis: 50%; }
+// .otp-w-7\/12	{ flex-basis: 58.333333%; }
+// .otp-w-8\/12	{ flex-basis: 66.666667%; }
+// .otp-w-9\/12	{ flex-basis: 75%; }
+// .otp-w-10\/12	{ flex-basis: 83.333333%; }
+// .otp-w-11\/12	{ flex-basis: 91.666667%; }
+
+@include otp-breakpoints-mixin.media-breakpoint("lt-md") {
+  .plus-w-lt-md-full { flex-basis: 100% !important; }
+}
+
+.plus-w-full {
+  width: 100%;
+}
+
+.plus-w-0 {
+  width: 0%;
+}
+
+.plus-row {
+  margin-bottom: 15px;
+}
+
+// .otp-f {
+//   display: flex;
+//   gap: 15px;
+
+//   &.otp-row  {
+//     @include otp-breakpoints-mixin.media-breakpoint("lt-md") {
+//       flex-direction: column;
+//     }
+//   }
+// }
+
+// .otp-f-between {
+//   justify-content: space-between;
+// }

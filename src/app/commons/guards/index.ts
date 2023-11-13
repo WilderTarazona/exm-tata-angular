@@ -1,0 +1,1 @@
+export { authenticationGuard as TataAuthenticationGuard } from "./auth.guard";

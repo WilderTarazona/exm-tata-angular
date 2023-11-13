@@ -1,0 +1,57 @@
+@use "../../../../../scss/variables/color.var" as tata-color;
+
+.sign-in {
+    width: 476px;
+    text-align: center;
+
+    &__card {
+        padding: 48px;
+    }
+
+    &__card-header {
+            text-align: center;
+            padding-bottom: 32px;
+
+        // &__logo {
+        //     margin-bottom: 24px;
+        // }
+
+        &__title {
+            color: map-get(tata-color.$colors, "text-bold");
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 38px;
+        }
+    }
+
+    &__card-content {
+        gap: 20px;
+        margin: 0 0 24px !important;
+    }
+
+    &__card-actions {
+        gap: 32px;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        &__options {
+
+            &__supplier-request {
+                color: var(--foundation-violet-violet-500, #7E57C6);
+                font-weight: 500;
+                line-height: 20px;
+            }
+        }
+    }
+
+    &__card-content {
+
+        &__options {
+            justify-content: flex-end;
+
+            &__forgot-password {
+                color: var(--foundation-violet-violet-500, #7E57C6);
+            }
+        }
+    }
+}

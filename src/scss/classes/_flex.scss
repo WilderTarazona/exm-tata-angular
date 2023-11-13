@@ -1,0 +1,7 @@
+.tata-flex {
+    display: flex;
+
+    &__column {
+        flex-direction: column !important;        
+    }
+}

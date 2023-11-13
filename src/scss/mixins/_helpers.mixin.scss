@@ -1,0 +1,25 @@
+@use '../variables/typography.var' as otp-typography;
+
+@mixin typography($key-font, $fontSize, $lineHeight) {
+  font-family: map-get(otp-typography.$fonts-family, $key-font) !important;
+  font-size: $fontSize !important;
+  line-height: $lineHeight !important;
+}
+
+@mixin form-field-placeholder {
+  &::placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}

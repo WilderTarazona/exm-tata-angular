@@ -1,0 +1,58 @@
+<mat-toolbar class="mat-elevation-z8">
+  <mat-toolbar-row class="toolbar-row">
+
+    <div class="header-web">
+      <div class="header-web__left-options">
+        <button type="button" mat-icon-button (click)="drawer?.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        
+        <!-- <span class="">{{options?.projectName}} - {{options?.companyName}}</span> -->
+      </div>
+
+      <div class="header-web__right-options">
+        
+        <div class="header-web__right-options__btn-icons">
+          <button type="button" mat-icon-button class="plus-text-gray-500 header-web__right-options__btn-icons__buttons" aria-label="button">
+            <mat-icon class="header-web__right-options__btn-icons__icons">settings</mat-icon>
+          </button>
+          <button type="button" mat-icon-button class="plus-text-gray-500 header-web__right-options__btn-icons__buttons" aria-label="button">
+            <mat-icon class="header-web__right-options__btn-icons__icons">notifications</mat-icon>
+          </button>
+        </div>
+
+        <div class="header-web__right-options__session">
+          <div class="header-web__right-options__session__user">
+            <div class="header-web__right-options__session__user__avatar">A</div>
+            <div class="header-web__right-options__session__user__info">
+              <div class="header-web__right-options__session__user__info__name">{{options?.userNames}}</div>
+              <div class="header-web__right-options__session__user__info__email">{{options?.userEmail}}</div>
+            </div>
+          </div>
+          <button type="button" mat-icon-button [matMenuTriggerFor]="menu" aria-label="icon-button with a menu">
+            <mat-icon>expand_more</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" class="header-web__right-options__session__menu-panel">
+            <!-- <button mat-menu-item type="button" class="header-web__right-options__session__menu-panel__menu-item">
+              <mat-icon class="header-web__right-options__session__menu-panel__menu-item__icon">person</mat-icon>
+              <span>Mi perfil</span>
+            </button> -->
+            <button mat-menu-item type="button" class="header-web__right-options__session__menu-panel__menu-item">
+              <mat-icon class="header-web__right-options__session__menu-panel__menu-item__icon">lock_person</mat-icon>
+              <span>Cambiar contraseña</span>
+            </button>
+            <button mat-menu-item type="button" class="header-web__right-options__session__menu-panel__menu-item plus-menu-border-top" (click)="signOut()">
+              <mat-icon class="header-web__right-options__session__menu-panel__menu-item__icon">logout</mat-icon>
+              <span>Cerrar sesión</span>
+            </button>
+          </mat-menu>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="header-mobile">
+    </div>
+    
+  </mat-toolbar-row>
+</mat-toolbar>

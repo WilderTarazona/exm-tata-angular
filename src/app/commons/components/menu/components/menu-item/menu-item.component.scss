@@ -1,0 +1,35 @@
+@use '../../../../../../scss/variables/color.var' as plus-colors;
+
+.menu-item {
+    padding: 0 16px !important;
+    // height: 40px;
+
+    &__list-item {
+        height: auto !important;
+        padding: 8px 12px !important;
+        border-radius: 6px !important;
+
+        &:hover, &:focus, &:active {
+            background-color: map-get(plus-colors.$colors, "primary-50") !important;
+
+            .menu-item__list-item__icon {
+                color: map-get(plus-colors.$colors, "primary-600") !important;
+                // color: rgb(228, 17, 101);
+            }
+            .menu-item__list-item__title {
+                color: map-get(plus-colors.$colors, "primary-600") !important;
+                // color: rgb(228, 17, 101);
+            }
+        }
+
+        &__icon {
+            margin: 0 12px 0 0 !important;
+            color: #FFF;
+            // --mdc-list-list-item-leading-icon-color: none !important;
+        }
+
+        &__title {
+            color: #FFF;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+<div class="sign-in">
+  <img class="sign-in__card-header__logo" src="assets/images/logo-dark-theme.svg" alt="Logo" width="115" height="56">
+
+  <form [formGroup]="form" (ngSubmit)="signIn()">
+
+    <mat-card class="sign-in__card tata-mat-card">
+      <mat-card-header class="sign-in__card-header tata-flex tata-flex__column">
+        <mat-card-title>          
+          <div class="sign-in__card-header__title">Bienvenido</div>
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="sign-in__card-content tata-flex tata-flex__column">
+
+          <mat-form-field appearance="outline" class="">
+            <mat-label>Usuario</mat-label>
+            <input matInput type="text" placeholder="Ingresa tu usuario" formControlName="username" autocomplete="off">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" placeholder="Contraseña" formControlName="password" autocomplete="off">
+          </mat-form-field>
+
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions class="sign-in__card-actions tata-flex tata-flex__column">
+        <button
+          type="submit"
+          mat-raised-button
+          class="tata-mat-button tata-mat-button__primary tata-w-full"
+          [disabled]="isDisabled"> Acceder
+        </button>
+      </mat-card-actions>
+
+    </mat-card>
+
+  </form>
+</div>

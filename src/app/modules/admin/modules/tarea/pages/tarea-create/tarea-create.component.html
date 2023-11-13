@@ -1,0 +1,78 @@
+<div class="title">
+  <tata-title title="Lista de tareas"></tata-title>
+</div>
+<div class="form">
+  <mat-form-field appearance="outline" floatLabel="always" class="form__description">
+    <mat-label>Ingresa una tarea</mat-label>
+    <input
+      type="text"
+      matInput
+      maxlength="250"
+      [inputMask]="descriptionInputMask"
+      [(ngModel)]="description"
+      (keyup.enter)="add()">
+    <button *ngIf="description" matSuffix mat-icon-button aria-label="Clear" (click)="description=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <button
+    type="button"
+    mat-button
+    mat-raised-button
+    color="primary"
+    class="tata-mat-button__primary"
+     (click)="add()"> Agregar
+  </button>
+</div>
+
+<div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef="let i = index">
+        <mat-checkbox (change)="$event ? toggleAllRows() : null"
+                      [checked]="hasChecked() && isAllSelected()"
+                      [indeterminate]="hasChecked() && !isAllSelected()"
+                      [aria-label]="checkboxLabel()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row; let i = index">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="$event ? toggleTask(row, $event) : null"
+                      [checked]="isSelected(i)"
+                      [aria-label]="checkboxLabel(row, i)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Tarea </th>
+      <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+      <td mat-cell *matCellDef="let element; let i = index">
+        <button
+          *ngIf="!element.isCompleted"
+          mat-icon-button
+          color="primary"
+          (click)="removeRow(i)"
+          class="tata-text-secondary-500">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+  
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" [attr.colspan]="displayedColumns.length">
+        No se han agregado tareas
+      </td>
+    </tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+<br />
+{{ data | json}}

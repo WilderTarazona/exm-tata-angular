@@ -1,0 +1,22 @@
+@use '../variables/color.var' as tata-colors;
+
+.tata-link {
+  cursor: pointer;
+
+  &__primary {
+    color: map-get(tata-colors.$colors, "primary-500") !important;
+
+    &:hover {
+      color: map-get(tata-colors.$colors, "primary-600") !important;
+    }
+
+    &:active {
+      color: map-get(tata-colors.$colors, "primary-700") !important;
+    }
+
+    &:disabled,
+    [disabled] {
+      color: map-get(tata-colors.$colors, "primary-200") !important;
+    }
+  }
+}

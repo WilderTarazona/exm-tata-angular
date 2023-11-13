@@ -1,0 +1,9 @@
+@use '../variables/typography.var' as typography;
+
+@each $key, $value in typography.$fonts-family {
+  @font-face {
+    font-family: $value;
+    src: url('../../assets/fonts/Lato/ttf/#{$value}.ttf') format("truetype");
+    font-display: swap;
+  }
+}

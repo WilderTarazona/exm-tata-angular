@@ -1,0 +1,11 @@
+@use '../variables/color.var' as plus-color;
+
+@each $key,$value in plus-color.$colors {
+  .tata-text-#{$key} {
+    color: #{$value} !important;
+  }
+
+  .tata-bg-#{$key} {
+    background-color: #{$value} !important;
+  }
+}

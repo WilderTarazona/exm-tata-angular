@@ -1,0 +1,60 @@
+@use '../../variables/color.var' as plus-colors;
+
+.tata-mat-button {
+  height: 44px !important;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+
+  &__primary {
+    background-color: map-get(plus-colors.$colors, "primary-500") !important;
+    border: 1px solid map-get(plus-colors.$colors, "primary-500") !important;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05) !important;
+    border-radius: 8px !important;
+    color: #FFFFFF !important;
+
+    // &:focus {
+    //   // outline: none;
+    //   background-color: aqua !important;
+    // }
+    &:hover {
+      background-color: map-get(plus-colors.$colors, "primary-600") !important;
+      border-color: map-get(plus-colors.$colors, "primary-600") !important;
+    }
+
+    &:active {
+      background-color: map-get(plus-colors.$colors, "primary-700") !important;
+      border-color: map-get(plus-colors.$colors, "primary-700") !important;
+    }
+
+    &:disabled,
+    [disabled] {
+      background-color: map-get(plus-colors.$colors, "primary-200") !important;
+      border-color: map-get(plus-colors.$colors, "primary-200") !important;
+    }
+  }
+
+  &__secondary {
+    background-color: map-get(plus-colors.$colors, "secondary-500") !important;
+    border: 1px solid map-get(plus-colors.$colors, "secondary-500") !important;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05) !important;
+    border-radius: 8px !important;
+    color: #FFFFFF !important;
+
+    &:hover {
+      background-color: map-get(plus-colors.$colors, "secondary-600") !important;
+      border-color: map-get(plus-colors.$colors, "secondary-600") !important;
+    }
+
+    &:active {
+      background-color: map-get(plus-colors.$colors, "secondary-700") !important;
+      border-color: map-get(plus-colors.$colors, "secondary-700") !important;
+    }
+
+    &:disabled,
+    [disabled] {
+      background-color: map-get(plus-colors.$colors, "secondary-200") !important;
+      border-color: map-get(plus-colors.$colors, "secondary-200") !important;
+    }
+  }
+}

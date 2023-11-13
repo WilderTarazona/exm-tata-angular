@@ -1,0 +1,5 @@
+@use '../../variables/color.var' as colors;
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background-color: map-get(colors.$colors, "success") !important;;
+}

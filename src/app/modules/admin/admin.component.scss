@@ -1,0 +1,25 @@
+.drawer-container {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  .drawer {
+    width: 250px;
+    text-align: left;
+    background: #000;
+
+    &__logo-container {
+      text-align: center;
+      margin: 32px 0 24px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.pages-container {
+  margin-top: 50px;
+}

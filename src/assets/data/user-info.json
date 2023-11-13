@@ -1,0 +1,23 @@
+{
+  "idUsuario": 1,
+  "empresa": "SMATATA CONSULTING S.A.C.SAC",
+  "apellidoPaterno": "Ramirez",
+  "apellidoMaterno": "Cordoba",
+  "nombres": "Juan Pablo",
+  "fullName": "Juan Pablo Ramirez Cordoba",
+  "idArea": 2,
+  "correo": "wtarazonac@gmail.com",
+  "rutas": [
+    {
+      "id": 1,
+      "idPadre": 0,
+      "nombre": "Tareas",
+      "icono": "terminal",
+      "url": "task",
+      "esMenu": true,
+      "hijos": [],
+      "acciones": []
+    }
+  ],
+  "roles": []
+}

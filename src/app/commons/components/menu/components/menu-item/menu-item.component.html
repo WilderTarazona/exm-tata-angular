@@ -1,0 +1,29 @@
+<ng-container *ngIf="option.url && (!option.options || option.options.length == 0); else withChildren">
+  <div class="menu-item">
+    <mat-list-item
+    [routerLink]="option.url"
+    class="menu-item__list-item"
+    [ngClass]="{ 'active': activateOption(option.url, option.baseUrl) }"
+    (click)="optionSelectedHandler()">
+      <mat-icon matListItemIcon class="menu-item__list-item__icon" *ngIf="option.icon">{{option.icon}}</mat-icon>
+      <span matListItemTitle class="menu-item__list-item__title">{{option.title}}</span>
+    </mat-list-item>
+  </div>
+</ng-container>
+
+<ng-template #withChildren>
+  <mat-list-item class="" (click)="toggle()"> <!-- [ngClass]="{ 'active': hasChildActive(option) }" -->
+    <span matListItemTitle class="">{{option.title}}</span>
+    <!-- <mat-icon matListItemIcon>{{option.icon}}</mat-icon> -->
+    <mat-icon
+      matListItemIcon
+      [@rotatedState]="!showBody ? 'default' : 'rotated'">
+      keyboard_arrow_down
+    </mat-icon>
+  </mat-list-item>
+</ng-template>
+
+<mat-nav-list [@smoothCollapse]="!showBody ? 'initial' : 'final'">
+  <tata-menu-item *ngFor="let subOption of option.options" [option]="subOption">
+  </tata-menu-item>
+</mat-nav-list>
