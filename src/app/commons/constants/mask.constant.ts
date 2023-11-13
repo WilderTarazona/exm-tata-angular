@@ -15,5 +15,5 @@ export const MASK_NUMBER: InputmaskOptions<string> = {
 };
 
 export const MASK_ALPHANUMERIC: InputmaskOptions<string> = {
-  regex: '^[a-zA-Z0-9]+$'
+  regex: '^[a-zA-Z0-9 ]+$'
 };
